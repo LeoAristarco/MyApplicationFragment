@@ -66,6 +66,7 @@ public class FragmentList extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -105,6 +106,7 @@ public class FragmentList extends Fragment {
 
 
     private void llenarLista() {
+        listaDeNueros.clear();
         for(int i=1;i<11;i++){
             listaDeNueros.add("NUMERO: "+i+"");
         }

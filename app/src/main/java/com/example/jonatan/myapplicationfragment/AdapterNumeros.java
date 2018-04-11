@@ -15,8 +15,8 @@ public class AdapterNumeros extends RecyclerView.Adapter<AdapterNumeros.ViewHold
     private View.OnClickListener listener;
 
     public AdapterNumeros(ArrayList<String> listaDeNumeros) {
-
-        this.listaDeNumeros = listaDeNumeros;
+        this.listaDeNumeros = new ArrayList<>();
+        this.listaDeNumeros.addAll(listaDeNumeros);
     }
 
     @NonNull
