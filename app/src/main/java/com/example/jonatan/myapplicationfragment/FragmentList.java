@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -77,7 +76,7 @@ public class FragmentList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View vista = inflater.inflate(R.layout.fragment_fragment_list, container, false);
+        View vista = inflater.inflate(R.layout.fragment_list, container, false);
         recyclerNumeros = (RecyclerView) vista.findViewById(R.id.idRecycler);
 
         recyclerNumeros.setLayoutManager(new LinearLayoutManager(getContext()));

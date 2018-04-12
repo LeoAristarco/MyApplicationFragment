@@ -70,7 +70,7 @@ public class FragmentDetalleNumero extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View vista= inflater.inflate(R.layout.fragment_fragment_detalle_numero, container, false);
+        View vista= inflater.inflate(R.layout.fragment_detalle_numero, container, false);
 
         textView = (TextView) vista.findViewById(R.id.idNumero);
 
