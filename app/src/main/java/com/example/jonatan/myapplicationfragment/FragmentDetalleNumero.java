@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -62,6 +63,7 @@ public class FragmentDetalleNumero extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Toast.makeText(getContext(),"onCreate",Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -72,6 +74,15 @@ public class FragmentDetalleNumero extends Fragment {
 
         textView = (TextView) vista.findViewById(R.id.idNumero);
 
+        Toast.makeText(getContext(),"onCreateView",Toast.LENGTH_SHORT).show();
+
+        getPaqueteEnviado();
+
+        return vista;
+
+    }
+
+    private void getPaqueteEnviado() {
         Bundle paquete = getArguments();
 
         if (paquete != null) {
@@ -80,11 +91,7 @@ public class FragmentDetalleNumero extends Fragment {
 
             textView.setText(numero);
         }
-
-        return vista;
-
     }
-
 
 
     // TODO: Rename method, update argument and hook method into UI event

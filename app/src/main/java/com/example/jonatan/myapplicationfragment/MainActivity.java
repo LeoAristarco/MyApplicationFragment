@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDetalleNu
 
     FragmentList fragmentList;
 
+    FragmentDetalleNumero fragmentDetalleNumero;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDetalleNu
         setContentView(R.layout.activity_main);
 
         fragmentList = new FragmentList();
+
+        fragmentDetalleNumero= new FragmentDetalleNumero();
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDetalleNu
         switch (view.getId()){
             case R.id.buttonA: fragmentTransaction.replace(R.id.idContenedorFragment,fragmentList);
                 break;
-            case R.id.buttonB: fragmentTransaction.replace(R.id.idContenedorFragment,fragmentList);
+            case R.id.buttonB: fragmentTransaction.replace(R.id.idContenedorFragment,fragmentDetalleNumero);
                 break;
         }
 
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDetalleNu
 
     @Override
     public void enviarNumero(String numero) {
-        FragmentDetalleNumero fragmentDetalleNumero = new FragmentDetalleNumero();
+
         Bundle paquete=new Bundle();
         paquete.putString("numero",numero);
         fragmentDetalleNumero.setArguments(paquete);
