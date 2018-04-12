@@ -90,9 +90,6 @@ public class FragmentList extends Fragment {
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(),
-                        listaDeNueros.get(recyclerNumeros.
-                                getChildAdapterPosition(view)),Toast.LENGTH_SHORT).show();
 
                 interfaceComunicaFragment.enviarNumero(listaDeNueros.get(recyclerNumeros.getChildAdapterPosition(view)));
 
