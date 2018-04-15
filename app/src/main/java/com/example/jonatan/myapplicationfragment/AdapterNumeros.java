@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class AdapterNumeros extends RecyclerView.Adapter<AdapterNumeros.ViewHolderNumeros> implements View.OnClickListener  {
 
-    ArrayList<String> listaDeNumeros;
+    ArrayList<String> listaDeNumeros;/**ArrayList<PersonajeVo> listaPersonajes*/
     private View.OnClickListener listener;
 
     public AdapterNumeros(ArrayList<String> listaDeNumeros) {
@@ -32,6 +32,8 @@ public class AdapterNumeros extends RecyclerView.Adapter<AdapterNumeros.ViewHold
     public void onBindViewHolder(@NonNull ViewHolderNumeros holder, int position) {
 
         holder.asignarDatos(listaDeNumeros.get(position));
+        /** seteo directamente aca los VO
+        */
 
     }
 
@@ -55,15 +57,24 @@ public class AdapterNumeros extends RecyclerView.Adapter<AdapterNumeros.ViewHold
     public class ViewHolderNumeros extends RecyclerView.ViewHolder {
 
         TextView dato;
+        /** todos los demas atributos en caso de ser la lista VO (data class)
+        */
+
 
         public ViewHolderNumeros(View itemView) {
             super(itemView);
             dato = itemView.findViewById(R.id.idDatos);
+        /** todos los demas atributos en caso de ser la lista VO (data class)
+        */
         }
 
 
         public void asignarDatos(String s) {
             dato.setText(s);
+            /** este metodo no va para los VO, hay que setear los datos directamente en el onBindViewHolder
+            */
+
+
         }
     }
 }
